@@ -1,7 +1,8 @@
 
 import React from 'react'
-
+import PropTypes from "prop-types";
 import List from './list'
+
 
 
 function Profile(props) {
@@ -19,14 +20,37 @@ function Profile(props) {
 
         </ul>
         <div>
-        <img style={{borderRadius:'15px', boxShadow:' 5px 10px 0px 0px rgba(96,16,16,0.75)'}} src={props.children} alt="image" /> 
+        <img style={{borderRadius:'15px', boxShadow:' 5px 5px 0px 0px rgba(96,16,16,0.75)' , height:'320px', width: 'auto'}} src={props.children} alt="myim" /> 
         </div>
-        <button className='btn' onClick={function handleName() {return alert(`${props.fullName}`)}}> Don't click me </button>
+        <button className='btn' onClick={ () => props.alert(props.fullName)}> Don't click me </button>
 
 
 
         </div>
     )
 }
+
+// Proptypes
+
+Profile.propTypes = {
+    fullName : PropTypes.string.isRequired,
+    bio : PropTypes.string.isRequired,
+    bioL : PropTypes.array.isRequired,
+    prof : PropTypes.string.isRequired,
+    alert : PropTypes.func.isRequired,
+    key : PropTypes.number,
+    img : PropTypes.string.isRequired
+}
+
+
+Profile.defaultProps = {
+    fullName :"Not Chuck Norris",
+    bio : "Who's bio is this",
+    bioL : ['Nothing here'],
+    prof : "What is a profession",
+    key : 1
+}
+
+
 
 export default Profile

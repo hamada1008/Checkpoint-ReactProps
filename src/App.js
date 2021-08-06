@@ -13,14 +13,17 @@ const styyle = {
 
 
 function App() {
+  const handleName = name =>  alert (`${name}`) ;
   return (
     <div style= {styyle}>
     
     <Profile 
+    
     fullName = {infs.name}
     bio = {infs.bio}
     bioL = {infs.biol}
-    prof = {infs.prof}>
+    prof = {infs.prof}
+    alert = {handleName}>
     {infs.img}
     
     </Profile>
@@ -32,3 +35,5 @@ function App() {
 }
 
 export default App;
+
+//add proptypes

@@ -1,4 +1,4 @@
-import React from "react"
+
 
 const infs = { 
     id : 1 , 
